@@ -82,6 +82,8 @@ extern const impl_list_map_t regular_u8_impl_list_map;
 extern const impl_list_map_t comp_f32_s8_impl_list_map;
 extern const impl_list_map_t comp_bf16_s8_impl_list_map;
 extern const impl_list_map_t comp_s8_s8_impl_list_map;
+extern const impl_list_map_t &compression_s8_s8_impl_list_map();
+extern const impl_list_map_t &compression_f32_s8_impl_list_map();
 
 // clang-format off
 

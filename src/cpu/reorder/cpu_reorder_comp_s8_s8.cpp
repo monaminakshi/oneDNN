@@ -72,6 +72,29 @@ const impl_list_map_t comp_s8_s8_impl_list_map REG_REORDER_P({
     }},
 });
 
+const impl_list_map_t &compression_s8_s8_impl_list_map() {
+    static const impl_list_map_t the_map = REG_REORDER_P({
+        // s8 -> s8
+        {{s8, s8, 2}, {
+            DNNL_X64_ONLY(REG_SR(s8, oi, s8, OI16i64o4i, fmt_order::keep, spec::compression))
+            DNNL_X64_ONLY(REG_SR(s8, io, s8, OI16i64o4i, fmt_order::keep, spec::compression))
+        nullptr,
+        }},
+    });
+    return the_map;
+}
+
+const impl_list_map_t &compression_f32_s8_impl_list_map() {
+    static const impl_list_map_t the_map = REG_REORDER_P({
+        // f32 -> s8
+        {{f32, s8, 2}, {
+            DNNL_X64_ONLY(REG_SR(f32, oi, s8, OI16i64o4i, fmt_order::keep, spec::compression))
+            DNNL_X64_ONLY(REG_SR(f32, io, s8, OI16i64o4i, fmt_order::keep, spec::compression))
+        nullptr,
+        }},
+    });
+    return the_map;
+}
 // clang-format on
 
 } // namespace cpu

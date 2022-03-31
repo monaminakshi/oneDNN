@@ -1177,6 +1177,8 @@ const memory_extra_flags_t rnn_s8s8_compensation
         = dnnl_memory_extra_flag_rnn_s8s8_compensation;
 const memory_extra_flags_t compensation_conv_asymmetric_src
         = dnnl_memory_extra_flag_compensation_conv_asymmetric_src;
+const memory_extra_flags_t ip_compression
+        = dnnl_memory_extra_flag_ip_compression;
 } // namespace memory_extra_flags
 
 using engine_kind_t = dnnl_engine_kind_t;
